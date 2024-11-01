@@ -1,18 +1,19 @@
+# 준비하기. import library
+
 import streamlit as st
-import time
-import numpy as np
-from PIL import Image
-
-
-
-
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import re
 
 # 1. 데이터셋만들기 / 불러오기
+st.markdown("# Plotting Demo")
+st.sidebar.header("Plotting Demo")
 
+# 제목 및 설명
+st.title('딥러닝 스타터')
+st.text('1. 데이터셋 만들기 / 불러오기')
+st.code('''
 sentence = """
 In the heart of a bustling city, where skyscrapers tower above and
 people from all walks of life converge, there exists a small, unassuming
@@ -23,42 +24,95 @@ to linger a little longer, lost in thought or inspiration, while outside,
 the world continues at its relentless pace, oblivious to the quiet magic brewing within.
 """
 
-# 2. 데이터 전처리 / ',', '.' 등등 불필요요소를 제거한다.
-sentence = sentence.lower().replace(',','').replace('.','').split()
-print(len(sentence))
+# 테스트 텍스트
+"""
+안녕하세요. 반갑습니다. 전처리가 확실하게 되었는지 확인해 볼까요?
+"""
+        ''',
+        language='python')
 
+# 데이터 입력
+sentence_user = st.text_area('데이터를 입력하세요.')
+sentence_user = re.sub("[^ㄱ-ㅎㅏ-ㅣ가-힣 ]", "", sentence_user)
+sentence_user = sentence_user.split()
+st.text(f'전처리 후 테스트용 샘플의 개수 : {len(sentence_user)}')
+st.text(sentence_user)
 
+# 사전 생성
+vocab = list(set(sentence_user))
+word2index = {tkn: i for i, tkn in enumerate(vocab, 1)}
+word2index['<unk>'] = 0
 
-r = np.random.rand(10000)*3
-theta = np.random.rand(10000)*2*np.pi
-y = r.astype(int)
-r = r * (np.cos(theta) + 1)
-x1 = r * np.cos(theta)
-x2 = r * np.sin(theta)
-X = np.array([x1, x2]).T
+# 수치화된 데이터를 단어로 바꾸기 위한 사전
+index2word = {v: k for k, v in word2index.items()}
 
-train_X, train_y = X[:8000, :], y[:8000]
-val_X, val_y = X[8000:9000, :], y[8000:9000]
-test_X, test_y = X[9000:, :], y[9000:]
+# 데이터 변환
+def build_data(sentence, word2index):
+    encoded = [word2index.get(token, 0) for token in sentence]
+    input_seq, label_seq = encoded[:-1], encoded[1:]
+    input_seq = torch.LongTensor(input_seq).unsqueeze(0)
+    label_seq = torch.LongTensor(label_seq).unsqueeze(0)
+    return input_seq, label_seq
 
-fig = plt.figure(figsize=(15,5))
-ax1 = fig.add_subplot(1, 3, 1)
-ax1.scatter(train_X[:, 0], train_X[:, 1], c=train_y, s=0.7)
-ax1.set_xlabel('x1')
-ax1.set_ylabel('x2')
-ax1.set_title('Train Set Distribution')
+X, Y = build_data(sentence_user, word2index)
 
+# 네트워크 클래스 정의
+class Net(nn.Module):
+    def __init__(self, vocab_size, input_size, hidden_size, batch_first=True):
+        super(Net, self).__init__()
+        self.embedding_layer = nn.Embedding(num_embeddings=vocab_size, embedding_dim=input_size)
+        self.rnn_layer = nn.RNN(input_size, hidden_size, batch_first=batch_first)
+        self.linear = nn.Linear(hidden_size, vocab_size)
 
-ax2 = fig.add_subplot(1, 3, 2)
-ax2.scatter(val_X[:, 0], val_X[:, 1], c=val_y)
-ax2.set_xlabel('x1')
-ax2.set_ylabel('x2')
-ax2.set_title('Validation Set Distribution')
+    def forward(self, x):
+        output = self.embedding_layer(x)
+        output, hidden = self.rnn_layer(output)
+        output = self.linear(output)
+        return output.view(-1, output.size(2))
 
-ax3 = fig.add_subplot(1, 3, 3)
-ax3.scatter(test_X[:, 0], test_X[:, 1], c=test_y)
-ax3.set_xlabel('x1')
-ax3.set_ylabel('x2')
-ax3.set_title('Test Set Distribution')
+# 하이퍼 파라미터 설정
+vocab_size = len(word2index)
+input_size = st.text_input('input_size 입력', max_chars=5, placeholder='input_size')
+hidden_size = st.text_input('hidden_size 입력', max_chars=5, placeholder='hidden_size')
+input_size = int(input_size) if input_size else 10
+hidden_size = int(hidden_size) if hidden_size else 20
 
-plt.show()
+# 모델 생성 및 학습 설정
+if 'model' not in st.session_state:
+    st.session_state.model = None
+
+if st.button('입력'):
+    st.text('모델을 생성합니다.')
+    # 모델을 세션 상태에 저장하여 유지
+    st.session_state.model = Net(vocab_size, input_size, hidden_size, batch_first=True)
+    st.session_state.loss_function = nn.CrossEntropyLoss()
+    st.session_state.optimizer = optim.Adam(params=st.session_state.model.parameters())
+    st.success("모델이 생성되었습니다.")
+
+# 예측 버튼 기능
+if st.button('예측'):
+    if st.session_state.model is not None:
+        st.text('임의예측을 시행합니다.')
+        output = st.session_state.model(X)
+        st.write("예측 결과 텐서:", output[0])
+        st.write("예측 결과 개수:", len(output))
+        st.write("예측 결과 형태:", output.shape)
+        # 수치화된 데이터를 단어로 전환하는 함수
+        st.session_state.decode = lambda y: [index2word.get(x) for x in y]
+        st.write(st.session_state.decode)
+    else:
+        st.warning("먼저 모델을 생성하세요.")
+
+# 훈련 버튼 기능
+if st.button('훈련'):
+    if st.session_state.model is not None:
+        st.text('임의예측을 시행합니다.')
+        output = st.session_state.model(X)
+        st.write("예측 결과 텐서:", output[0])
+        st.write("예측 결과 개수:", len(output))
+        st.write("예측 결과 형태:", output.shape)
+        # 수치화된 데이터를 단어로 전환하는 함수
+        decode = lambda y: [index2word.get(x) for x in y]
+        st.write(decode)
+    else:
+        st.warning("먼저 모델을 생성하세요.")
