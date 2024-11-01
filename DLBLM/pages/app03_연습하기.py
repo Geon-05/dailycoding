@@ -28,6 +28,15 @@ the world continues at its relentless pace, oblivious to the quiet magic brewing
 """
 안녕하세요. 반갑습니다. 전처리가 확실하게 되었는지 확인해 볼까요?
 """
+
+"""
+도시의 번잡한 거리 한가운데, 높은 빌딩들이 하늘을 찌를 듯 솟아 있는 곳에
+사람들의 발길이 끊이지 않는 작은 서점이 하나 있습니다. 이 서점은 독서와
+휴식을 사랑하는 이들에게 편안한 안식처가 되어주며, 곳곳에 배치된 아늑한
+의자와 잔잔한 음악은 방문자들로 하여금 조금 더 머물러 책장을 넘기게 만듭니다.
+그렇게 서점 안에서는 시간이 멈춘 듯 고요한 평화가 흐르고 있지만, 문 밖 세상은
+여전히 빠르게 돌아가고 있습니다.
+"""
         ''',
         language='python')
 
@@ -107,8 +116,8 @@ if st.button('예측'):
 if st.button('훈련'):
     if st.session_state.model is not None:
         # 훈련 시작
+        st.text('머신러닝을 시행합니다.')
         for step in range(201):
-            st.text('머신러닝을 시행합니다.')
             # 경사 초기화
             st.session_state.optimizer.zero_grad()
             # 순방향 전파
