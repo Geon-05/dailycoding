@@ -106,13 +106,24 @@ if st.button('예측'):
 # 훈련 버튼 기능
 if st.button('훈련'):
     if st.session_state.model is not None:
-        st.text('임의예측을 시행합니다.')
-        output = st.session_state.model(X)
-        st.write("예측 결과 텐서:", output[0])
-        st.write("예측 결과 개수:", len(output))
-        st.write("예측 결과 형태:", output.shape)
-        # 수치화된 데이터를 단어로 전환하는 함수
-        decode = lambda y: [index2word.get(x) for x in y]
-        st.write(decode)
+        # 훈련 시작
+        for step in range(201):
+            st.text('머신러닝을 시행합니다.')
+            # 경사 초기화
+            st.session_state.optimizer.zero_grad()
+            # 순방향 전파
+            output = st.session_state.model(X)
+            # 손실값 계산
+            loss = st.session_state.loss_function(output, Y.view(-1))
+            # 역방향 전파
+            loss.backward()
+            # 매개변수 업데이트
+            st.session_state.optimizer.step()
+            # 기록
+            if step % 40 == 0:
+                st.write(f"[{step+1}/201] {loss} ")
+                pred = output.softmax(-1).argmax(-1).tolist()
+                st.write(" ".join(["Repeat"] + st.session_state.decode(pred)))
+                st.write()
     else:
         st.warning("먼저 모델을 생성하세요.")
