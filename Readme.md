@@ -17,7 +17,7 @@ In this repository provided my Python solutions of Programmers problems.
 *P.S. If you like this, please leave me a star.* ★
 
 ### 01_기초
-![기초트레이닝캘린더](.\img\코딩 기초 트레이닝 캘린더.png)
+![기초트레이닝캘린더](https://github.com/Geon-05/dailycoding/blob/main/img/%EC%BD%94%EB%94%A9%20%EA%B8%B0%EC%B4%88%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8B%9D%20%EC%BA%98%EB%A6%B0%EB%8D%94.png?raw=true)
 |№|day|Title-Solution|Difficulty|Note|
 | ---: | --- | --- | --- | --- |
 |1.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|코드 처리하기/등차수열의 특정한 항만 더하기/주사위 게임 2/원소들의 곱과 합/이어 붙인 수|Easy|
@@ -43,6 +43,7 @@ In this repository provided my Python solutions of Programmers problems.
 |21.|[day25]()||Easy|
 
 ### 02_입문
+![입문트레이닝캘린더](https://github.com/Geon-05/dailycoding/blob/main/img/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%9E%85%EB%AC%B8%20%EC%BA%98%EB%A6%B0%EB%8D%94.png?raw=true)
 |№|day|Title-Solution|Difficulty|Note|
 | ---: | --- | --- | --- | --- |
 |1.|[day5]()||Easy|
