@@ -11,3 +11,11 @@ In this repository provided my Python solutions of Programmers problems.
 - I highly recommend you to try and solve problems yourself before look at the solutions here.
 - Solutions and approaches may be not optimal.
 - All Solutions here are in Python 3.
+<br><br>
+
+## Solutions
+*P.S. If you like this, please leave me a star.* ★
+
+|№|Title|Solution|Difficulty|Note|
+| ---: | --- | --- | --- | --- |
+|1.|test|test|Easy|
