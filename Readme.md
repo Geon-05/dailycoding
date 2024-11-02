@@ -17,6 +17,6 @@ In this repository provided my Python solutions of Programmers problems.
 *P.S. If you like this, please leave me a star.* ★
 
 ### 01_기초
-|№|day|Title|Solution|Difficulty|Note|
-| ---: | --- | --- | --- | --- | --- |
-|1.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88)|test|Easy|
+|№|day|Title-Solution|Difficulty|Note|
+| ---: | --- | --- | --- | --- |
+|1.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|[코드 처리하기](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05/day5_1.py)|Easy|
