@@ -3,5 +3,15 @@
 def solution(arr, n):
     answer = []
     if len(arr) % 2 == 1:
-        for 
+        for idx, i in enumerate(arr):
+            if idx % 2 == 0:
+                answer.append(i + n)
+            else:
+                answer.append(i)
+    else:
+        for idx, i in enumerate(arr):
+            if idx % 2 == 0:
+                answer.append(i)
+            else:
+                answer.append(i + n)
     return answer
