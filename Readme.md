@@ -16,6 +16,7 @@ In this repository provided my Python solutions of Programmers problems.
 ## Solutions
 *P.S. If you like this, please leave me a star.* ★
 
+### 01_기초
 |№|Title|Solution|Difficulty|Note|
 | ---: | --- | --- | --- | --- |
-|1.|test|test|Easy|
+|1.|(.\programmers_코딩테스트\01_기초)|test|Easy|
