@@ -19,28 +19,49 @@ In this repository provided my Python solutions of Programmers problems.
 ### 01_기초
 |№|day|Title-Solution|Difficulty|Note|
 | ---: | --- | --- | --- | --- |
-|1.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|[코드 처리하기](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05/day5_1.py)|Easy|
-|2.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|[등차수열의 특정한 항만 더하기](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05/day5_2.py)|Easy|
-|3.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|[주사위 게임 2](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05/day5_3.py)|Easy|
-|4.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|[원소들의 곱과 합](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05/day5_4.py)|Easy|
-|5.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|[이어 붙인 수](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05/day5_5.py)|Easy|
-|6.|[day6](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day06)|[마지막 두 원소](https://github.com/Geon-05/dailycoding/blob/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day06/day6_1.py)|Easy|
-|7.|[day6]()|[]()|Easy|
-|8.|[day6]()|[]()|Easy|
-|9.|[day6]()|[]()|Easy|
-|10.|[day6]()|[]()|Easy|
-|11.|[day7]()|[]()|Easy|
-|12.|[day7]()|[]()|Easy|
-|13.|[day7]()|[]()|Easy|
-|14.|[day7]()|[]()|Easy|
-|15.|[day7]()|[]()|Easy|
-|16.|[day8]()|[]()|Easy|
-|17.|[day8]()|[]()|Easy|
-|18.|[day8]()|[]()|Easy|
-|19.|[day8]()|[]()|Easy|
-|20.|[day8]()|[]()|Easy|
-|21.|[day9]()|[]()|Easy|
-|22.|[day9]()|[]()|Easy|
-|23.|[day9]()|[]()|Easy|
-|24.|[day9]()|[]()|Easy|
-|25.|[day9]()|[]()|Easy|
+|1.|[day5](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day05)|코드 처리하기/등차수열의 특정한 항만 더하기/주사위 게임 2/원소들의 곱과 합/이어 붙인 수|Easy|
+|2.|[day6](https://github.com/Geon-05/dailycoding/tree/main/programmers_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/01_%EA%B8%B0%EC%B4%88/day06)|마지막 두 원소/|Easy|
+|3.|[day7]()||Easy|
+|4.|[day8]()||Easy|
+|5.|[day9]()||Easy|
+|6.|[day10]()||Easy|
+|7.|[day11]()||Easy|
+|8.|[day12]()||Easy|
+|9.|[day13]()||Easy|
+|10.|[day14]()||Easy|
+|11.|[day15]()||Easy|
+|12.|[day16]()||Easy|
+|13.|[day17]()||Easy|
+|14.|[day18]()||Easy|
+|15.|[day19]()||Easy|
+|16.|[day20]()||Easy|
+|17.|[day21]()||Easy|
+|18.|[day22]()||Easy|
+|19.|[day23]()||Easy|
+|20.|[day24]()||Easy|
+|21.|[day25]()||Easy|
+
+### 02_입문
+|№|day|Title-Solution|Difficulty|Note|
+| ---: | --- | --- | --- | --- |
+|1.|[day5]()||Easy|
+|2.|[day6]()||Easy|
+|3.|[day7]()||Easy|
+|4.|[day8]()||Easy|
+|5.|[day9]()||Easy|
+|6.|[day10]()||Easy|
+|7.|[day11]()||Easy|
+|8.|[day12]()||Easy|
+|9.|[day13]()||Easy|
+|10.|[day14]()||Easy|
+|11.|[day15]()||Easy|
+|12.|[day16]()||Easy|
+|13.|[day17]()||Easy|
+|14.|[day18]()||Easy|
+|15.|[day19]()||Easy|
+|16.|[day20]()||Easy|
+|17.|[day21]()||Easy|
+|18.|[day22]()||Easy|
+|19.|[day23]()||Easy|
+|20.|[day24]()||Easy|
+|21.|[day25]()||Easy|
