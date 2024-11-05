@@ -1,4 +1,4 @@
-# day25 이차원 배열 대각선 순회하기
+# day25 정사각형으로 만들기
 
 def solution(arr):
     if len(arr) < len(arr[0]):
