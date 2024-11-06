@@ -2,12 +2,13 @@
 
 def solution(A:str, B):
     answer = 0
+    tmp = A
     while len(A) > answer:
+        if tmp == B:
+            return answer
         tmp = A[-1]
         for char_base in A[:-1]:
             tmp += char_base
-        if tmp == B:
-            return answer
         A = tmp
         answer += 1
     answer = -1
